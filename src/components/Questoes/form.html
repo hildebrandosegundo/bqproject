@@ -1,14 +1,14 @@
 <div class="row">
   <div class="content-header">
-    <h1>Provas
+    <h1>Questões
       <small>{{ sub_title }}</small>
     </h1>
     <nav>
       <div class="nav-wrapper">
         <div class="col s12">
           <a href="#/">Banco de questões</a> >
-          <a href="#/provas">Provas</a> >
-          <span>Criar provas</span>
+          <a href="#/questoes">Questões</a> >
+          <span>Criar questão</span>
         </div>
       </div>
     </nav>
@@ -16,8 +16,9 @@
   <div class="card col s12">
     <div class="card-content">
       <form class="row" autocomplete="on">
-        <div class="input-field col s12">
-          <h5>Dados de filtro de questões</h5>
+        <div class="input-field col s10">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1" class="active">Enunciado</label>
         </div>
         <div class="input-field col s3">
           <select class="browser-default">

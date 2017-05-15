@@ -3,7 +3,7 @@
     name: 'questoes-create',
     data: function () {
       return {
-        sub_title: 'Criar questao'
+        sub_title: 'Criar questão'
       }
     },
     template: require('./form.html')

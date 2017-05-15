@@ -6,7 +6,7 @@
       <div class="nav-wrapper">
         <div class="col s12">
           <a href="#/">Banco de questões</a> >
-          <a href="#/provas">Provas</a> >
+          <a href="#/questoes">Provas</a> >
           <span>Detalhes da provas</span>
         </div>
       </div>
@@ -27,13 +27,13 @@
         </div>
         <div class="row">
           <div class="col s12">
-            <a :href="'#/contas/2/editar'" class="btn blue">Editar</a>
+            <a :href="'#/questoes/2/editar'" class="btn blue">Editar</a>
             <a href="" class="btn red" @click.prevent="remove(1)">Excluir</a>
           </div>
         </div>
       </div>
       <div class="card-action">
-        <a href="#/provas">Voltar</a>
+        <a href="#/questoes">Voltar</a>
       </div>
     </div>
   </div>
@@ -43,7 +43,7 @@
     name: 'accounts-view',
     methods: {
       remove: function (id) {
-        this.$router.push('/provas')
+        this.$router.push('/questoes')
       }
     }
   }

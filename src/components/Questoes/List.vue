@@ -1,12 +1,12 @@
 <template>
   <div class="row">
     <div class="content-header">
-      <h1>Provas <small>Gerenciamento de provas</small></h1>
+      <h1>Questões <small>Gerenciamento de questões</small></h1>
       <nav>
         <div class="nav-wrapper">
           <div class="col s12">
             <a href="#/">Banco de questões</a> >
-            <span>Suas provas</span>
+            <span>Suas questões</span>
           </div>
         </div>
       </nav>
@@ -30,7 +30,7 @@
         </table>
       </div>
       <div class="card-action">
-        <a href="#/provas/novo">Nova prova</a>
+        <a href="#/questoes/novo">Nova prova</a>
       </div>
     </div>
   </div>
@@ -41,7 +41,7 @@
     name: 'accounts',
     methods: {
       goTo: function (id) {
-        this.$router.push('/provas/' + id)
+        this.$router.push('/questoes/' + id)
       }
     }
   }
