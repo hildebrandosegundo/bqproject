@@ -1,0 +1,120 @@
+<div class="row">
+  <div class="content-header">
+    <h1>Provas
+      <small>{{ sub_title }}</small>
+    </h1>
+    <nav>
+      <div class="nav-wrapper">
+        <div class="col s12">
+          <a href="#/">Banco de questões</a> >
+          <a href="#/provas">Provas</a> >
+          <span>Criar provas</span>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="card col s12">
+    <div class="card-content">
+      <form class="row" autocomplete="on">
+        <div class="input-field col s12">
+          <h5>Dados de filtro de questões</h5>
+        </div>
+        <div class="input-field col s3">
+          <select class="browser-default">
+            <option value="" disabled selected>Selecione a área</option>
+            <option value="1">Lingua Portuguesa</option>
+            <option value="2">Matemática</option>
+          </select>
+          <label v-for="" class="active">Área</label>
+        </div>
+        <div class="input-field col s2">
+          <select class="browser-default">
+            <option value="" disabled selected>Selecione a série</option>
+            <option value="1">5º Ano</option>
+            <option value="2">9º Ano</option>
+          </select>
+          <label v-for="" class="active">Série</label>
+        </div>
+        <div class="input-field col s2 ">
+          <select class="browser-default">
+            <option value="" disabled selected>Slecione o nível</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+          <label v-for="" class="active">nível</label>
+        </div>
+        <div class="input-field col s6">
+          <select class="browser-default">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+          <label v-for="" class="active">Categoria</label>
+        </div>
+        <div class="input-field col s6">
+          <select class="browser-default">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+          <label v-for="" class="active">Abilidades</label>
+        </div>
+
+        <div class="input-field col s6">
+          <input type="submit" class="waves-effect waves-light btn-large blue-grey darken-4" value="Pesquisar">
+        </div>
+        <div id="div_chip">
+        <div v-for="todo in todos" class="chip">
+          {{todo.text}}
+          <i class="close material-icons ion-ios-close-circle"></i>
+        </div>
+        </div>
+        <!--<div>
+          <div class="input-field col s6">
+            <input type="text" id="title" class="validate" placeholder="Como você prefere identificar esta conta?"
+                   required>
+            <label for="title" class="active">Título da conta</label>
+          </div>
+          <div class="input-field col s6">
+            <input type="text" id="balance_initial" class="validate" placeholder="Qual o valor inicial desta conta?"
+                   required>
+            <label for="title" class="active">Valor inicial</label>
+          </div>
+          <div class="input-field col s6">
+            <select class="browser-default">
+              <option value="0">Escolha um banco</option>
+              <option class="left circle">Banco (000)</option>
+            </select>
+            <label for="" class="active">Qual seu banco?</label>
+          </div>
+          <div class="input-field col s6">
+            <input type="number" id="agency" class="validate" placeholder="Qual o número da sua agencia?" required>
+            <label for="agency" class="active">Número da agência</label>
+          </div>
+          <div class="input-field col s6">
+            <input type="number" id="account_number" class="validate" placeholder="Qual o número da sua conta?"
+                   required>
+            <label for="accont_number" class="active">Número da conta</label>
+          </div>
+          <div class="input-field col s6">
+            <input type="submit" class="waves-effect waves-light btn-large blue-grey darken-4" value="salvar">
+          </div>
+        </div>-->
+      </form>
+  </div>
+  <div class="card-action">
+    <a href="#/provas">Voltar</a>
+  </div>
+</div>
+</div>
