@@ -22,7 +22,7 @@
         <!--Router View-->
         <router-view></router-view>
         <div class="col s10 grey lighten-2">
-          <small>by <a href="">Secretaria Municipal de Educação - SEMEC</a> -  &copy; 2017</small>
+          <small>by <a href="http://www.semec.pi.gov.br/">Secretaria Municipal de Educação - SEMEC</a> -  &copy; 2017</small>
         </div>
         <div class="col s2 grey lighten-2 right-align">
           <small>v1.0.0@dev</small>

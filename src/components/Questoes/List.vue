@@ -16,14 +16,14 @@
         <table class="highlight">
           <thead>
           <tr>
-            <th>Provas</th>
+            <th>Listagem de Questões</th>
           </tr>
           </thead>
           <tbody>
           <tr @click="goTo(1)">
             <td class="valign-wrapper">
-              Conta título&nbsp;
-              <small>agência: 0000 / conta: 0000  / código do banco: 000 </small>
+              Questão - 001 > &nbsp;
+              <small> Prova / Área / Série / Nível / Catégoria / Habilidades </small>
             </td>
           </tr>
           </tbody>
