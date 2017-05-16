@@ -21,10 +21,7 @@
             <p><b>Série:</b> 5º / <b>Nível:</b> 01 / <b>Catégoria:</b> Números e Operações</p>
             <p><b>Habilidade:</b> D23 - Identificação fraçoes equivalentes</p>
           </div>
-          <div class="col s3 right-align">
-            <p>Saldo: <span class="btn disabled">R$ 0,00</span></p>
           </div>
-        </div>
         <div class="row">
           <div class="col s12">
             <a :href="'#/questoes/2/editar'" class="btn blue">Editar</a>

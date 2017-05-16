@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav class=" indigo accent-1 darken-3 z-index">
+    <nav class="blue-grey darken-3 z-index">
       <div class="nav-wrapper row">
         <div class="col s12">
           <a href="#/" class="blue-grey darken-4 brand-logo">Banco de Questões</a>
@@ -11,9 +11,9 @@
       </div>
     </nav>
     <div class="row" id="main">
-      <div class="col s12 m4 l3  indigo accent-1 padding-top" id="left-side">
+      <div class="col s12 m4 l3 blue lighten-2padding-top" id="left-side">
         <div class="collection">
-          <a href="#/" class="collection-item  indigo accent-1 white-text">Menu</a>
+          <a href="#/" class="collection-item blue lighten-1 white-text">Menu</a>
           <a href="#/Questoes" class="collection-item">Questões</a>
           <a href="#/Provas" class="collection-item">Provas</a>
         </div>
@@ -22,7 +22,7 @@
         <!--Router View-->
         <router-view></router-view>
         <div class="col s10 grey lighten-2">
-          <small>by <a href="http://www.semec.pi.gov.br/">Secretaria Municipal de Educação - SEMEC</a> -  &copy; 2017</small>
+          <small>by <a href="http://www.semec.pi.gov.br/"target="_blank">Secretaria Municipal de Educação - SEMEC</a> -  &copy; 2017</small>
         </div>
         <div class="col s2 grey lighten-2 right-align">
           <small>v1.0.0@dev</small>
@@ -50,11 +50,11 @@
   }
 
   body {
-    background-color: #8c9eff !important;
+    background-color: #6495ED !important;
   }
 
   .nav-wrapper {
-    background-color: #8c9eff !important;
+    background-color: #6495ED !important;
     color: #F8F8FF;
   }
 
@@ -88,7 +88,7 @@
 
   .content-header h1 small {
     font-size: 70%;
-    color: #8c9eff;
+    color: #6495ED;
   }
 
   table thead tr th:first-child {
