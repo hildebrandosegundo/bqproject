@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav class="blue-grey darken-3 z-index">
+    <nav class=" indigo accent-1 darken-3 z-index">
       <div class="nav-wrapper row">
         <div class="col s12">
           <a href="#/" class="blue-grey darken-4 brand-logo">Banco de Questões</a>
@@ -11,10 +11,9 @@
       </div>
     </nav>
     <div class="row" id="main">
-      <div class="col s12 m4 l3 blue-grey padding-top" id="left-side">
-        <div class="divider blue-grey darken-2"></div>
+      <div class="col s12 m4 l3  indigo accent-1 padding-top" id="left-side">
         <div class="collection">
-          <a href="#/" class="collection-item grey darken-2 white-text">Menu</a>
+          <a href="#/" class="collection-item  indigo accent-1 white-text">Menu</a>
           <a href="#/Questoes" class="collection-item">Questões</a>
           <a href="#/Provas" class="collection-item">Provas</a>
         </div>
@@ -49,43 +48,53 @@
     min-height: 100%;
     margin: 0px;
   }
+
   body {
-    background-color: #607d8b !important;
+    background-color: #8c9eff !important;
   }
+
   .nav-wrapper {
-    background-color: #607d8b !important;
-    color: #9e9e9e;
+    background-color: #8c9eff !important;
+    color: #F8F8FF;
   }
+
   .z-index {
     position: relative;
     z-index: 9;
   }
+
   .padding-top {
-    padding-top:15px !important;
+    padding-top: 15px !important;
   }
+
   .brand-logo {
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
+
   .divider {
     padding: 5px;
     margin: 20px 0;
   }
+
   .content-header {
     margin-bottom: 1.68rem;
   }
+
   .content-header h1 {
     font-size: 28px;
     margin-bottom: 0;
   }
+
   .content-header h1 small {
     font-size: 70%;
-    color: #9e9e9e;
+    color: #8c9eff;
   }
 
   table thead tr th:first-child {
     width: 1%;
   }
+
   table img {
     margin-right: 10px;
   }

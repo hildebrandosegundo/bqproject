@@ -41,6 +41,6 @@
   }
 
   a {
-    color: #42b983;
+    color: #6495ED;
   }
 </style>

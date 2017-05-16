@@ -30,7 +30,7 @@
         </table>
       </div>
       <div class="card-action">
-        <a href="#/questoes/novo">Nova prova</a>
+        <a href="#/questoes/novo">Nova Questão</a>
       </div>
     </div>
   </div>
