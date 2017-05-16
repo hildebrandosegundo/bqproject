@@ -1,11 +1,10 @@
 <template>
-  <div class="hello">
-    <h3>{{ msg }}</h3>
-    <h4>Descrição</h4>
+ <div class="hello">
+   <b><h5>{{ msg }}</h5></b><br>
+    <b><h5>Descrição</h5></b>
     <p>O sistema é direcionado a criação de provas por meio de um banco de questões.</p>
-    <p>É possível realizar no sistema o cadastro de questões com seus respectivos itens.</p>
-
-    <h4>Links importantes</h4>
+    <p>É possível realizar no sistema o cadastro de questões com seus respectivos itens.</p><br>
+    <h6>Links importantes</h6>
     <ul>
       <li><a href="http://www.qedu.com.br" target="_blank">QEDU</a></li>
       <li><a href="http://www.inep.com.br" target="_blank">INEP</a></li>
