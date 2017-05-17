@@ -11,9 +11,9 @@
       </div>
     </nav>
     <div class="row" id="main">
-      <div class="col s12 m4 l3 blue lighten-2padding-top" id="left-side">
+      <div class="col s12 m4 l3 indigo accent-1 padding-top" id="left-side">
         <div class="collection">
-          <a href="#/" class="collection-item blue lighten-1 white-text">Menu</a>
+          <a href="#/" class="collection-item indigo accent-1 white-text">Menu</a>
           <a href="#/Questoes" class="collection-item">Questões</a>
           <a href="#/Provas" class="collection-item">Provas</a>
         </div>
@@ -50,11 +50,11 @@
   }
 
   body {
-    background-color: #6495ED !important;
+    background-color: #8c9eff !important;
   }
 
   .nav-wrapper {
-    background-color: #6495ED !important;
+    background-color: #8c9eff !important;
     color: #F8F8FF;
   }
 
