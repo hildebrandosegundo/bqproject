@@ -35,6 +35,8 @@
 <script>
   export default {
     name: 'app',
+    scripts: [
+      require('jquery/dist/jquery.min')],
     styles: [
       require('material-icons/css/material-icons.min.css'),
       require('materialize-css/dist/css/materialize.min.css'),
