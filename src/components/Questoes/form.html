@@ -19,16 +19,14 @@
         <div class="input-field col s3">
           <select class="browser-default">
             <option value="" disabled selected>Selecione a área</option>
-            <option value="1">Lingua Portuguesa</option>
-            <option value="2">Matemática</option>
+            <option v-for="area in areas.data">{{area.area}}</option>
           </select>
           <label v-for="" class="active">Área</label>
         </div>
         <div class="input-field col s2">
           <select class="browser-default">
             <option value="" disabled selected>Selecione a série</option>
-            <option value="1">5º Ano</option>
-            <option value="2">9º Ano</option>
+            <option v-for="serie in series.data">{{serie.serie}}</option>
           </select>
           <label v-for="" class="active">Série</label>
         </div>
@@ -101,10 +99,10 @@
           <label for="alternativa1" class="active">1º ALTERNATIVA</label>
         </div>
         <div class="input-field col s3">
-          <p>
-            <input class="with-gap" name="group1" type="radio" id="correta1"  />
-            <label for="correta1">Alternativa Correta</label>
-          </p>
+        <p>
+          <input type="checkbox" name="gender" class="filled-in" id="correta1" />
+          <label for="correta1">Alternativa correta</label>
+        </p>
         </div>
         <div class="input-field col s9">
           <textarea id="alternativa2" class="materialize-textarea"></textarea>
@@ -112,8 +110,8 @@
         </div>
         <div class="input-field col s3">
           <p>
-            <input class="with-gap" name="group1" type="radio" id="correta2"  />
-            <label for="correta2">Alternativa Correta</label>
+            <input type="checkbox" name="gender" class="filled-in" id="correta2" />
+            <label for="correta2">Alternativa correta</label>
           </p>
         </div>
         <div class="input-field col s9">
@@ -122,8 +120,8 @@
         </div>
         <div class="input-field col s3">
           <p>
-            <input class="with-gap" name="group1" type="radio" id="correta3"  />
-            <label for="correta3">Alternativa Correta</label>
+            <input type="checkbox" class="filled-in" id="correta3" />
+            <label for="correta3">Alternativa correta</label>
           </p>
         </div>
         <div class="input-field col s9">
@@ -132,12 +130,12 @@
         </div>
         <div class="input-field col s3">
           <p>
-            <input class="with-gap" name="group1" type="radio" id="correta4"  />
-            <label for="correta4">Alternativa Correta</label>
+            <input type="checkbox" class="filled-in" id="correta4" />
+            <label for="correta4">Alternativa correta</label>
           </p>
         </div>
         <div class="input-field col s6">
-          <input type="submit" class="waves-effect waves-light btn-large  indigo accent-1 darken-4" value="Salvar">
+          <input type="submit" class="waves-effect waves-light btn-large  indigo accent-1 darken-4" value="Adicionar">
         </div>
         <div id="div_chip">
         <div v-for="todo in todos" class="chip">

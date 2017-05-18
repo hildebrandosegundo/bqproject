@@ -6,6 +6,18 @@
         sub_title: 'Criar questão'
       }
     },
-    template: require('./form.html')
+    template: require('./form.html'),
+    computed: {
+      areas () {
+        return this.$store.state.area.areaList
+      },
+      series () {
+        return this.$store.state.serie.serieList
+      }
+    },
+    created () {
+      this.$store.dispatch('getArea')
+      this.$store.dispatch('getSerie')
+    }
   }
 </script>
