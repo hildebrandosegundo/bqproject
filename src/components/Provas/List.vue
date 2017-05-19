@@ -3,7 +3,7 @@
     <div class="content-header">
       <h1>Provas <small>Gerenciamento de provas</small></h1>
       <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper2 row">
           <div class="col s12">
             <a href="#/">Banco de questões</a> >
             <span>Suas provas</span>

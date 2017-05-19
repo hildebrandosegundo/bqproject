@@ -2,12 +2,14 @@
   <div id="app">
     <nav class="blue-grey darken-3 z-index">
       <div class="nav-wrapper row">
-        <!--<img width="100px" height="300px" src="assets/LogoSemec.png.png"/>-->
         <div class="col s12">
           <a href="#/" class="blue-grey darken-4 brand-logo">Banco de Questões</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="#/logout"><i class="ion-log-out"></i></a></li>
           </ul>
+          <div class="right-align">
+          <img  width="250px" height="63px" src="./assets/LogoSemec.png"/>
+          </div>
         </div>
       </div>
     </nav>
@@ -57,10 +59,13 @@
   }
 
   .nav-wrapper {
+    background-color: #ffffff !important;
+    color: #F8F8FF;
+  }
+  .nav-wrapper2 {
     background-color: #8c9eff !important;
     color: #F8F8FF;
   }
-
   .z-index {
     position: relative;
     z-index: 9;
