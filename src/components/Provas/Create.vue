@@ -1,6 +1,6 @@
 <script>
   export default {
-    name: 'accounts-create',
+    name: 'provas-create',
     data: function () {
       return {
         sub_title: 'Criar Prova'
