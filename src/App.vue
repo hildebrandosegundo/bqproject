@@ -2,6 +2,7 @@
   <div id="app">
     <nav class="blue-grey darken-3 z-index">
       <div class="nav-wrapper row">
+        <!--<img width="100px" height="300px" src="assets/LogoSemec.png.png"/>-->
         <div class="col s12">
           <a href="#/" class="blue-grey darken-4 brand-logo">Banco de Questões</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
