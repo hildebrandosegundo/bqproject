@@ -224,6 +224,33 @@
             <label for="correta4">Alternativa correta</label>
           </p>
         </div>
+
+              <div class="input-field col s7">
+                <textarea v-model="questao.alternativa4" id="alternativa5" class="materialize-textarea"></textarea>
+                <label for="alternativa5" class="active">5º ALTERNATIVA</label>
+              </div>
+
+              <div>
+                <div class="input-field col s3">
+                  <form action="#">
+                    <div class="file-field input-field">
+                      <div class="btn">
+                        <span>Arquivo</span>
+                        <input type="file" accept="image/png, image/jpeg">
+                      </div>
+                      <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="Carregar">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="input-field col s2">
+                  <p>
+                    <input v-model="questao.correta" type="radio" name="gender" class="with-gap" id="correta5"/>
+                    <label for="correta5">Alternativa correta</label>
+                  </p>
+                </div>
         <div class="input-field col s6">
           <input type="submit" class="waves-effect waves-light btn-large  indigo accent-1 darken-4" value="Adicionar">
         </div>
