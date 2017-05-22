@@ -20,14 +20,15 @@
           </tr>
           </thead>
           <tbody>
-          <tr @click="goTo(1)">
+          <tr v-for="questao in questoes.data" @click="goTo(questao.id)">
             <td class="valign-wrapper">
-              Questão - 001 > &nbsp;
-              <small> Prova / Área / Série / Nível / Catégoria / Habilidades </small>
+              Questão - {{questao.id}} >
+              <small> Área: {{questao.area.area}}/ Série: {{questao.serie.serie}} / Nível: {{questao.nivel.nivel}} / Catégoria: {{questao.categoria.categoria}} / Habilidades: {{questao.habilidade.habilidade}} </small>
             </td>
           </tr>
           </tbody>
         </table>
+        <pagination totalPerPage="15" resource="pquestoes"></pagination>
       </div>
       <div class="card-action">
         <a href="#/questoes/novo">Criar nova Questão</a>
@@ -37,11 +38,20 @@
 </template>
 <script>
   // Código javascript
+  import Pagination from './../SharedComponents/Pagination'
   export default {
-    name: 'accounts',
+    name: 'questoes',
+    components: {
+      'pagination': Pagination
+    },
     methods: {
       goTo: function (id) {
         this.$router.push('/questoes/' + id)
+      }
+    },
+    computed: {
+      questoes () {
+        return this.$store.state.pagination.getList
       }
     }
   }
