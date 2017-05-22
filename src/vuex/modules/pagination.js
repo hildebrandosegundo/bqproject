@@ -1,9 +1,4 @@
-/**
- * Created by hildebrandosegundo on 19/05/17.
- */
-/**
- * Created by hildebrandosegundo on 17/05/17.
- */
+
 import Vue from 'vue'
 
 export default {
@@ -12,10 +7,13 @@ export default {
   },
   mutations: {
     updateList (state, data) {
-      state.questoesList = data
+      state.getList = data
     }
   },
   actions: {
+    clearRegistries (context, config) {
+      context.commit('updateList', [])
+    },
     getRegistries (context, config) {
       if (!config.page) {
         config.page = 1
@@ -23,7 +21,7 @@ export default {
       if (!config.limit) {
         config.limit = 200
       }
-      Vue.http.get('api/' + config.resource + '?limit=' + config.limit + '&page=' + config.page).then(response => {
+      Vue.http.get('api/' + config.resource + '?limit=' + config.limit + '&page=' + config.page + '&order=id,desc').then(response => {
         context.commit('updateList', response.data)
       })
     }

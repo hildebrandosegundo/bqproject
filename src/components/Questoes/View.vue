@@ -37,7 +37,7 @@
 </template>
 <script>
   export default {
-    name: 'accounts-view',
+    name: 'questao-view',
     methods: {
       remove: function (id) {
         this.$router.push('/questoes')

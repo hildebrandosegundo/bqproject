@@ -17,21 +17,21 @@
     <div class="card-content">
       <form class="row" autocomplete="on" @submit.prevent="save">
         <div class="input-field col s3">
-          <select v-model="questao.idarea" id="idarea" class="browser-default">
+          <select v-model="questao.area_id" id="area_id" class="browser-default">
             <option value="" disabled selected>Selecione a área</option>
             <option v-for="area in areas.data" :value="area.id">{{area.area}}</option>
           </select>
           <label v-for="" class="active">Área</label>
         </div>
         <div class="input-field col s2">
-          <select v-model="questao.idserie" id="idserie" class="browser-default">
+          <select v-model="questao.serie_id" id="serie_id" class="browser-default">
             <option value="" disabled selected>Selecione a série</option>
             <option v-for="serie in series.data" :value="serie.id">{{serie.serie}}</option>
           </select>
           <label v-for="" class="active">Série</label>
         </div>
         <div class="input-field col s1 ">
-          <select v-model="questao.idnivel" id="idnivel" class="browser-default">
+          <select v-model="questao.nivel_id" id="nivel_id" class="browser-default">
             <option value="" disabled selected>Selecione o nível</option>
             <option value="0">0</option>
             <option value="1">1</option>
@@ -48,7 +48,7 @@
           <label v-for="" class="active">Nível</label>
         </div>
         <div class="input-field col s3">
-          <select v-model="questao.idcategoria" id="idcategoria" class="browser-default">
+          <select v-model="questao.categoria_id" id="categoria_id" class="browser-default">
             <option value="" disabled selected>Selecione a Categoria</option>
             <option value="1">Números e Operações</option>
             <option value="2">Tratamento da Informação</option>
@@ -59,7 +59,7 @@
           <label v-for="" class="active">Categoria</label>
         </div>
         <div class="input-field col s3">
-          <select v-model="questao.idhabilidade" id="idhabilidade" class="browser-default">
+          <select v-model="questao.habilidade_id" id="habilidade_id" class="browser-default">
             <option value="" disabled selected>Selecione a Habilidades</option>
             <option value="1">D16 - Identificar a localização de números inteiros na
               reta numérica.
@@ -104,33 +104,37 @@
           <label for="enuciado" class="active">ENUCIADO DA QUESTÃO</label>
         </div>
 
-    <div>
-    <div class="input-field col s3">
-      <form action="#">
-        <div class="file-field input-field">
-          <div class="btn">
-            <span>Arquivo</span>
-            <input type="file" accept="image/png, image/jpeg">
-          </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" type="text" placeholder="Carregar">
-          </div>
-        </div>
-      </form>
-    </div>
 
+        <div class="input-field col s3">
+          <form action="#">
+            <div class="file-field input-field">
+              <div class="btn">
+                <span class="ion-md-images"></span>
+                <input @change="onFileChange" type="file" accept="image/png, image/jpeg">
+              </div>
+              <div class="file-path-wrapper">
+                <input id="imagem" class="file-path validate" type="text" placeholder="Carregar">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div v-if="!image"></div>
+        <div v-else>
+          <img :src="image" />
+          <button @click="removeImage">Remove image</button>
+        </div>
         <div class="input-field col s7">
           <textarea v-model="questao.alternativa1" id="alternativa1" class="materialize-textarea"></textarea>
           <label for="alternativa1" class="active">1º ALTERNATIVA</label>
         </div>
 
-      <div>
+
         <div class="input-field col s3">
           <form action="#">
             <div class="file-field input-field">
               <div class="btn">
-                <span>Arquivo</span>
-                <input type="file" accept="image/png, image/jpeg">
+                <span class="ion-md-images"></span>
+                <input @change="onFileChange" type="file" accept="image/png, image/jpeg">
               </div>
               <div class="file-path-wrapper">
                 <input class="file-path validate" type="text" placeholder="Carregar">
@@ -145,26 +149,26 @@
             <label for="correta1">Alternativa correta</label>
           </p>
         </div>
-
+        <img :src="image_al1" />
         <div class="input-field col s7">
           <textarea v-model="questao.alternativa2" id="alternativa2" class="materialize-textarea"></textarea>
           <label for="alternativa2" class="active">2º ALTERNATIVA</label>
         </div>
 
-        <div>
-          <div class="input-field col s3">
-            <form action="#">
-              <div class="file-field input-field">
-                <div class="btn">
-                  <span>Arquivo</span>
-                  <input type="file" accept="image/png, image/jpeg">
-                </div>
-                <div class="file-path-wrapper">
-                  <input class="file-path validate" type="text" placeholder="Carregar">
-                </div>
+
+        <div class="input-field col s3">
+          <form action="#">
+            <div class="file-field input-field">
+              <div class="btn">
+                <span class="ion-md-images"></span>
+                <input @change="onFileChange" type="file" accept="image/png, image/jpeg">
               </div>
-            </form>
-          </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Carregar">
+              </div>
+            </div>
+          </form>
+        </div>
 
         <div class="input-field col s2">
           <p>
@@ -172,25 +176,26 @@
             <label for="correta2">Alternativa correta</label>
           </p>
         </div>
+        <img :src="image_alt2" />
         <div class="input-field col s7">
           <textarea v-model="questao.alternativa3" id="alternativa3" class="materialize-textarea"></textarea>
           <label for="alternativa3" class="active">3º ALTERNATIVA</label>
         </div>
 
-          <div>
-            <div class="input-field col s3">
-              <form action="#">
-                <div class="file-field input-field">
-                  <div class="btn">
-                    <span>Arquivo</span>
-                    <input type="file" accept="image/png, image/jpeg">
-                  </div>
-                  <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text" placeholder="Carregar">
-                  </div>
-                </div>
-              </form>
+
+        <div class="input-field col s3">
+          <form action="#">
+            <div class="file-field input-field">
+              <div class="btn">
+                <span class="ion-md-images"></span>
+                <input @change="onFileChange" type="file" accept="image/png, image/jpeg">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Carregar">
+              </div>
             </div>
+          </form>
+        </div>
 
         <div class="input-field col s2">
           <p>
@@ -198,25 +203,26 @@
             <label for="correta3">Alternativa correta</label>
           </p>
         </div>
+        <img :src="image_alt3" />
         <div class="input-field col s7">
           <textarea v-model="questao.alternativa4" id="alternativa4" class="materialize-textarea"></textarea>
           <label for="alternativa4" class="active">4º ALTERNATIVA</label>
         </div>
 
-            <div>
-              <div class="input-field col s3">
-                <form action="#">
-                  <div class="file-field input-field">
-                    <div class="btn">
-                      <span>Arquivo</span>
-                      <input type="file" accept="image/png, image/jpeg">
-                    </div>
-                    <div class="file-path-wrapper">
-                      <input class="file-path validate" type="text" placeholder="Carregar">
-                    </div>
-                  </div>
-                </form>
+
+        <div class="input-field col s3">
+          <form action="#">
+            <div class="file-field input-field">
+              <div class="btn">
+                <span class="ion-md-images"></span>
+                <input @change="onFileChange" type="file" accept="image/png, image/jpeg">
               </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Carregar">
+              </div>
+            </div>
+          </form>
+        </div>
 
         <div class="input-field col s2">
           <p>
@@ -224,35 +230,37 @@
             <label for="correta4">Alternativa correta</label>
           </p>
         </div>
+        <img :src="image_alt4" />
+        <div class="input-field col s7">
+          <textarea v-model="questao.alternativa4" id="alternativa5" class="materialize-textarea"></textarea>
+          <label for="alternativa5" class="active">5º ALTERNATIVA</label>
+        </div>
 
-              <div class="input-field col s7">
-                <textarea v-model="questao.alternativa4" id="alternativa5" class="materialize-textarea"></textarea>
-                <label for="alternativa5" class="active">5º ALTERNATIVA</label>
+
+        <div class="input-field col s3">
+          <form action="#">
+            <div class="file-field input-field">
+              <div class="btn">
+                <span class="ion-md-images"></span>
+                <input @change="onFileChange" type="file" accept="image/png, image/jpeg">
               </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Carregar">
+              </div>
+            </div>
+          </form>
+        </div>
 
-              <div>
-                <div class="input-field col s3">
-                  <form action="#">
-                    <div class="file-field input-field">
-                      <div class="btn">
-                        <span>Arquivo</span>
-                        <input type="file" accept="image/png, image/jpeg">
-                      </div>
-                      <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text" placeholder="Carregar">
-                      </div>
-                    </div>
-                  </form>
-                </div>
-
-                <div class="input-field col s2">
-                  <p>
-                    <input v-model="questao.correta" type="radio" name="gender" class="with-gap" id="correta5"/>
-                    <label for="correta5">Alternativa correta</label>
-                  </p>
-                </div>
+        <div class="input-field col s2">
+          <p>
+            <input v-model="questao.correta" type="radio" name="gender" class="with-gap" id="correta5"/>
+            <label for="correta5">Alternativa correta</label>
+          </p>
+        </div>
+        <img :src="image_alt5" />
         <div class="input-field col s6">
-          <input type="submit" class="waves-effect waves-light btn-large  indigo accent-1 darken-4" value="Adicionar">
+          <input type="submit" class="waves-effect waves-light btn-large  indigo accent-1 darken-4"
+                 value="Adicionar">
         </div>
 
       </form>

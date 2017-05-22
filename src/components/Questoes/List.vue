@@ -16,14 +16,33 @@
         <table class="highlight">
           <thead>
           <tr>
-            <th>Listagem de Questões</th>
+            <th>ID</th>
+            <th>AREA</th>
+            <th>SERIE</th>
+            <th>NIVEL</th>
+            <th>CATEGORIA</th>
+            <th>HABILIDADE</th>
           </tr>
           </thead>
           <tbody>
           <tr v-for="questao in questoes.data" @click="goTo(questao.id)">
-            <td class="valign-wrapper">
-              Questão - {{questao.id}} >
-              <small> Área: {{questao.area.area}}/ Série: {{questao.serie.serie}} / Nível: {{questao.nivel.nivel}} / Catégoria: {{questao.categoria.categoria}} / Habilidades: {{questao.habilidade.habilidade}} </small>
+            <td>
+              <small>{{questao.id}}</small>
+            </td>
+            <td>
+              <small>{{questao.area.area}}</small>
+            </td>
+            <td>
+              <small>{{questao.serie.serie}}</small>
+            </td>
+            <td>
+              <small>{{questao.nivel.nivel}}</small>
+            </td>
+            <td>
+              <small>{{questao.categoria.categoria}}</small>
+            </td>
+            <td>
+              <small>{{questao.habilidade.habilidade}}</small>
             </td>
           </tr>
           </tbody>
