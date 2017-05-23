@@ -57,6 +57,6 @@ export default {
     })
   },
   logout: function () {
-    localStorage['token'] = '{}'
+    localStorage.clear()
   }
 }

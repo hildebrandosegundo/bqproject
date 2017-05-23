@@ -76,6 +76,7 @@
     background-color: #8c9eff !important;
     color: #F8F8FF;
   }
+
   .z-index {
     position: relative;
     z-index: 9;
