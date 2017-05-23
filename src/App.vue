@@ -20,12 +20,15 @@
           <a href="#/Questoes" class="collection-item">Questões</a>
           <a href="#/Provas" class="collection-item">Provas</a>
         </div>
+        <div class="collection">
+          <a href="#/login" @click="logout" class="collection-item">Sair</a>
+        </div>
       </div>
       <div class="col s12 m8 l9 grey lighten-3" id="right-side">
         <!--Router View-->
         <router-view></router-view>
         <div class="col s10 grey lighten-2">
-          <small>by <a href="http://www.semec.pi.gov.br/"target="_blank">Secretaria Municipal de Educação - SEMEC</a> -  &copy; 2017</small>
+          <small>by <a href="http://www.semec.pi.gov.br/"target="_blank">Secretaria Municipal de Educação - SEMEC</a> -  &copy; <span>{{ someDate | moment("YYYY") }}</span></small>
         </div>
         <div class="col s2 grey lighten-2 right-align">
           <small>v1.0.0@dev</small>
@@ -36,8 +39,15 @@
 </template>
 
 <script>
+  import LoginIterceptors from './components/Login/interceptors'
+
   export default {
     name: 'app',
+    methods: {
+      logout () {
+        LoginIterceptors.logout()
+      }
+    },
     scripts: [
       require('jquery/dist/jquery.min')],
     styles: [

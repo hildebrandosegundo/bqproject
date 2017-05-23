@@ -10,6 +10,8 @@ import QuestoesView from '@/components/Questoes/View'
 import QuestoesCreate from '@/components/Questoes/Create'
 import QuestoesEdit from '@/components/Questoes/Edit'
 
+import Login from '@/components/Login/Form'
+
 const routes = [
   {path: '/', name: 'Hello', component: Hello},
   {path: '/provas', component: ProvasList},
@@ -20,7 +22,9 @@ const routes = [
   {path: '/questoes', component: QuestoesList},
   { path: '/questoes/novo', component: QuestoesCreate },
   { path: '/questoes/:id', component: QuestoesView },
-  { path: '/questoes/:id/editar', component: QuestoesEdit }
+  { path: '/questoes/:id/editar', component: QuestoesEdit },
+
+  { path: '/login', component: Login }
 ]
 
 export default routes
