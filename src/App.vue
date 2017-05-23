@@ -19,6 +19,7 @@
           <a href="#/" class="collection-item indigo accent-1 white-text">Menu</a>
           <a href="#/Questoes" class="collection-item">Questões</a>
           <a href="#/Provas" class="collection-item">Provas</a>
+          <a href="http://localhost:8000/register" class="collection-item">Cadastrar novo usuário</a>
         </div>
         <div class="collection">
           <a href="#/login" @click="logout" class="collection-item">Sair</a>
