@@ -21,31 +21,21 @@
             <option value="" disabled selected>Selecione a área</option>
             <option v-for="area in areas.data" :value="area.id">{{area.area}}</option>
           </select>
-          <label v-for="" class="active">Área</label>
+          <label class="active">Área</label>
         </div>
         <div class="input-field col s2">
-          <select v-model="questao1.serie_id" id="serie_id" class="browser-default">
+          <select v-model="questao1.serie_id" id="serie_id" class="browser-default" @change="getNivels">
             <option value="" disabled selected>Selecione a série</option>
             <option v-for="serie in series.data" :value="serie.id">{{serie.serie}}</option>
           </select>
-          <label v-for="" class="active">Série</label>
+          <label class="active">Série</label>
         </div>
         <div class="input-field col s1 ">
           <select v-model="questao1.nivel_id" id="nivel_id" class="browser-default">
             <option value="" disabled selected>Selecione o nível</option>
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
+            <option v-for="nivel in nivels.data" :value="nivel.id">{{nivel.nivel}}</option>
           </select>
-          <label v-for="" class="active">Nível</label>
+          <label class="active">Nível</label>
         </div>
         <div class="input-field col s3">
           <select v-model="questao1.categoria_id" id="categoria_id" class="browser-default">
@@ -56,7 +46,7 @@
             <option value="4">Espaços e Formas</option>
             <option value="5">Tratamento de Informações</option>
           </select>
-          <label v-for="" class="active">Categoria</label>
+          <label class="active">Categoria</label>
         </div>
         <div class="input-field col s3">
           <select v-model="questao1.habilidade_id" id="habilidade_id" class="browser-default">
@@ -97,15 +87,14 @@
               divisão, potenciação).
             </option>
           </select>
-          <label v-for="" class="active">Habilidades</label>
+          <label class="active">Habilidades</label>
         </div>
-        <div>
-        <div class="input-field col s8">
+        <div class="input-field col s9">
           <textarea v-model="questao1.enunciado" id="enuciado" class="materialize-textarea"></textarea>
           <label for="enuciado" class="active">ENUCIADO DA QUESTÃO</label>
         </div>
 
-        <div class="input-field col s4">
+        <div class="input-field col s3">
           <form action="#">
             <div class="file-field input-field">
               <div class="btn">
@@ -116,13 +105,14 @@
             </div>
           </form>
         </div>
+        <div class="col s12">
         <div v-if="!image_enu"></div>
         <div v-else>
           <img :src="image_enu"/>
           <button @click="removeImage(1)">Remove image</button>
         </div>
         </div>
-        <div>
+
         <div class="input-field col s7">
           <textarea v-model="questao1.alternativa1" id="alternativa1" class="materialize-textarea"></textarea>
           <label for="alternativa1" class="active">1º ALTERNATIVA</label>
@@ -147,13 +137,13 @@
             <label for="correta1">Alternativa correta</label>
           </p>
         </div>
+        <div class="col s12">
         <div v-if="!image_alt1"></div>
         <div v-else>
           <img :src="image_alt1"/>
           <button @click="removeImage(2)">Remove image</button>
         </div>
         </div>
-        <div>
         <div class="input-field col s7">
           <textarea v-model="questao1.alternativa2" id="alternativa2" class="materialize-textarea"></textarea>
           <label for="alternativa2" class="active">2º ALTERNATIVA</label>
@@ -177,13 +167,14 @@
             <label for="correta2">Alternativa correta</label>
           </p>
         </div>
+        <div class="col s12">
         <div v-if="!image_alt2"></div>
         <div v-else>
           <img :src="image_alt2"/>
           <button @click="removeImage(3)">Remove image</button>
         </div>
         </div>
-        <div>
+
         <div class="input-field col s7">
           <textarea v-model="questao1.alternativa3" id="alternativa3" class="materialize-textarea"></textarea>
           <label for="alternativa3" class="active">3º ALTERNATIVA</label>
@@ -207,14 +198,14 @@
             <label for="correta3">Alternativa correta</label>
           </p>
         </div>
-
+        <div class="col s12">
         <div v-if="!image_alt3"></div>
         <div v-else>
           <img :src="image_alt3"/>
           <button @click="removeImage(4)">Remove image</button>
         </div>
         </div>
-        <div>
+
         <div class="input-field col s7">
           <textarea v-model="questao1.alternativa4" id="alternativa4" class="materialize-textarea"></textarea>
           <label for="alternativa4" class="active">4º ALTERNATIVA</label>
@@ -238,14 +229,14 @@
             <label for="correta4">Alternativa correta</label>
           </p>
         </div>
-
+        <div class="col s12">
         <div v-if="!image_alt4"></div>
         <div v-else>
           <img :src="image_alt4"/>
           <button @click="removeImage(5)">Remove image</button>
         </div>
         </div>
-        <div>
+
         <div class="input-field col s7">
           <textarea v-model="questao1.alternativa5" id="alternativa5" class="materialize-textarea"></textarea>
           <label for="alternativa5" class="active">5º ALTERNATIVA</label>
@@ -269,7 +260,7 @@
             <label for="correta5">Alternativa correta</label>
           </p>
         </div>
-
+        <div class="col s12">
         <div v-if="!image_alt5"></div>
         <div v-else>
           <img :src="image_alt5"/>

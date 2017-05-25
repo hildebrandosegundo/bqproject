@@ -29,7 +29,7 @@
         <!--Router View-->
         <router-view></router-view>
         <div class="col s10 grey lighten-2">
-          <small>by <a href="http://www.semec.pi.gov.br/"target="_blank">Secretaria Municipal de Educação - SEMEC</a> -  &copy; <span>{{ someDate | moment("YYYY") }}</span></small>
+          <small>by <a href="http://www.semec.pi.gov.br/"target="_blank">Secretaria Municipal de Educação - SEMEC</a> -  &copy; <span>{{ new Date() | moment("YYYY") }}</span></small>
         </div>
         <div class="col s2 grey lighten-2 right-align">
           <small>v1.0.0@dev</small>

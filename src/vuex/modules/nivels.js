@@ -13,8 +13,13 @@ export default {
     }
   },
   actions: {
-    getNivel (context) {
+    getNivels (context) {
       Vue.http.get('api/nivels').then(response => {
+        context.commit('updateNivelList', response.data)
+      })
+    },
+    getNivel (context, data) {
+      Vue.http.get('api/nivels?where[serie_id]=' + data.serie_id + '&where[area_id]=' + data.area_id).then(response => {
         context.commit('updateNivelList', response.data)
       })
     }

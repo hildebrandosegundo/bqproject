@@ -15,6 +15,10 @@
     },
     template: require('./form.html'),
     methods: {
+      // busca nivel
+      getNivels () {
+        this.$store.dispatch('getNivel', this.questao1)
+      },
       onFileChange (e, img) {
         const files = e.target.files || e.dataTransfer.files
 
@@ -51,21 +55,21 @@
         data.append('nivel_id', this.questao1.nivel_id)
         data.append('categoria_id', this.questao1.categoria_id)
         data.append('habilidade_id', this.questao1.habilidade_id)
-        data.append('enunciado', this.questao1.enunciado)
-        data.append('imagem', this.image_enu)
-        data.append('imagemAlt1', this.image_alt1)
-        data.append('imagemAlt2', this.image_alt2)
-        data.append('imagemAlt3', this.image_alt3)
-        data.append('imagemAlt4', this.image_alt4)
-        data.append('imagemAlt5', this.image_alt5)
-        data.append('correta', this.questao1.correta)
-        data.append('alternativa1', this.questao1.alternativa1)
-        data.append('alternativa2', this.questao1.alternativa2)
-        data.append('alternativa3', this.questao1.alternativa3)
-        data.append('alternativa4', this.questao1.alternativa4)
-        data.append('alternativa5', this.questao1.alternativa5)
+        data.append('enunciado', this.questao1.enunciado || '')
+        data.append('imagem', this.image_enu || '')
+        data.append('imagemAl1', this.image_alt1 || '')
+        data.append('imagemAl2', this.image_alt2 || '')
+        data.append('imagemAl3', this.image_alt3 || '')
+        data.append('imagemAl4', this.image_alt4 || '')
+        data.append('imagemAl5', this.image_alt5 || '')
+        data.append('correta', this.questao1.correta || '')
+        data.append('alternativa1', this.questao1.alternativa1 || '')
+        data.append('alternativa2', this.questao1.alternativa2 || '')
+        data.append('alternativa3', this.questao1.alternativa3 || '')
+        data.append('alternativa4', this.questao1.alternativa4 || '')
+        data.append('alternativa5', this.questao1.alternativa5 || '')
         this.$store.dispatch('newQuestao', data).then(() => {
-          this.$router.push('/questoes')
+          // this.$router.push('/questoes')
         })
         // console.log(this.questao)
       }
@@ -76,6 +80,9 @@
       },
       series () {
         return this.$store.state.serie.serieList
+      },
+      nivels () {
+        return this.$store.state.nivel.nivelList
       }
     },
     created () {
