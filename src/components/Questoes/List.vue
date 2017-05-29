@@ -12,8 +12,15 @@
       </nav>
     </div>
     <div class="card col s12">
+      <div class="col s4 card-action">
+        <a class="waves-effect waves-light btn indigo accent-1 darken-4" href="#/questoes/novo">Criar nova Questão</a>
+      </div>
+      <form class="col s4 card-action" id="search">
+        Pesquisar
+        <input name="query" v-model="searchQuery">
+      </form>
       <div class="card-content">
-        <table class="highlight">
+        <table class="bordered">
           <thead>
           <tr>
             <th>ID</th>
@@ -50,7 +57,7 @@
         <pagination totalPerPage="15" resource="pquestoes"></pagination>
       </div>
       <div class="card-action">
-        <a href="#/questoes/novo">Criar nova Questão</a>
+        <a class="waves-effect waves-light btn indigo accent-1 darken-4" href="#/questoes/novo">Criar nova Questão</a>
       </div>
     </div>
   </div>

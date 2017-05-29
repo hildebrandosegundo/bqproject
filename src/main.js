@@ -5,12 +5,13 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
+import VueMaterials from 'vue-materials'
 
 Vue.use(Vuex)
 Vue.use(VueResource)
 Vue.use(VueRouter)
 Vue.use(require('vue-moment'))
-
+Vue.use(VueMaterials)
 import App from './App'
 import routes from './router'
 import VuexStore from './vuex/store'

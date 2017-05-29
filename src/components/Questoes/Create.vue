@@ -69,8 +69,9 @@
         data.append('alternativa4', this.questao1.alternativa4 || '')
         data.append('alternativa5', this.questao1.alternativa5 || '')
         this.$store.dispatch('newQuestao', data).then(() => {
-          // this.$router.push('/questoes')
+          this.$router.push('/questoes')
         })
+        // Materialize.toast('I am a toast!', 3000, 'rounded')
         // console.log(this.questao)
       }
     },

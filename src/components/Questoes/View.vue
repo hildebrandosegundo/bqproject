@@ -3,7 +3,7 @@
     <div class="content-header">
       <h1>Questão <small>Detalhes</small></h1>
       <nav>
-      <div class="nav-wrapper">
+      <div class="nav-wrapper2 row">
         <div class="col s12">
           <a href="#/">Banco de questões</a> >
           <a href="#/questoes">Questões</a> >
@@ -30,7 +30,7 @@
         </div>
       </div>
       <div class="card-action">
-        <a href="#/questoes">Voltar</a>
+        <a class="waves-effect waves-light btn" href="#/questoes">Voltar</a>
       </div>
     </div>
   </div>
