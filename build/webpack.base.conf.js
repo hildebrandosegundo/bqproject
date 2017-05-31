@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
@@ -25,6 +26,12 @@ module.exports = {
       '@': resolve('src')
     }
   },
+  plugins:[
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery:'jquery'
+    }),
+  ],
   module: {
     rules: [
       {
@@ -66,7 +73,6 @@ module.exports = {
         test: /\.(html)$/,
         loader: 'html-loader'
       }
-
     ]
   }
 }

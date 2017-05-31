@@ -1,4 +1,6 @@
 <script>
+  /* var $ = require('jquery/dist/jquery.min')
+  var Materialize = require('materialize-css/dist/js/materialize.min') */
   export default {
     name: 'questoes-create',
     data: function () {
@@ -71,8 +73,7 @@
         this.$store.dispatch('newQuestao', data).then(() => {
           this.$router.push('/questoes')
         })
-        // Materialize.toast('I am a toast!', 3000, 'rounded')
-        // console.log(this.questao)
+        alert('Dados salvos com sucesso!')
       }
     },
     computed: {
