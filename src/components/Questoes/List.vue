@@ -17,7 +17,7 @@
       </div>
       <form class="col s4 card-action" id="search">
         Pesquisar
-        <input name="query" v-model="searchQuery">
+        <input name="query">
       </form>
       <div class="card-content">
         <table class="bordered">

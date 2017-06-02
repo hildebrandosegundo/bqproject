@@ -53,7 +53,7 @@
       require('materialize-css/dist/js/materialize.min')
     ],
     styles: [
-      require('material-icons/css/material-icons.min.css'),
+      require('materialize-css/css/ghpages-materialize.css'),
       require('materialize-css/dist/css/materialize.min.css'),
       require('ionicons/dist/css/ionicons.min.css')
     ]

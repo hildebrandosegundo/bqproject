@@ -13,8 +13,8 @@ export default {
     }
   },
   actions: {
-    getHabilidade (context) {
-      Vue.http.get('api/habilidades').then(response => {
+    getHabilidade (context, data) {
+      Vue.http.get('api/habilidades?where[serie_id]=' + data.serie_id + '&where[area_id]=' + data.area_id + '&where[categoria_id]=' + data.categoria_id).then(response => {
         context.commit('updateHabilidadeList', response.data)
       })
     }

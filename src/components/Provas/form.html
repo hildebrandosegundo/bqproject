@@ -20,97 +20,62 @@
           <h5>Filtro de Questões</h5>
         </div>
         <div class="input-field col s3">
-          <select class="browser-default">
-            <option value="" disabled selected>Selecione a Área</option>
-            <option value="1">Lingua Portuguesa</option>
-            <option value="2">Matemática</option>
+          <select v-model="questao.area_id" id="area_id" class="browser-default">
+            <option value="" disabled selected>Selecione a área</option>
+            <option v-for="area in areas.data" :value="area.id">{{area.area}}</option>
           </select>
-          <label v-for="" class="active">Área</label>
+          <label class="active">Área</label>
         </div>
         <div class="input-field col s2">
-          <select class="browser-default">
-            <option value="" disabled selected>Selecione a Série</option>
-            <option value="1">5º Ano</option>
-            <option value="2">9º Ano</option>
+          <select v-model="questao.serie_id" id="serie_id" class="browser-default" @change="getNivels">
+            <option value="" disabled selected>Selecione a série</option>
+            <option v-for="serie in series.data" :value="serie.id">{{serie.serie}}</option>
           </select>
-          <label v-for="" class="active">Série</label>
+          <label class="active">Série</label>
         </div>
         <div class="input-field col s1 ">
-          <select class="browser-default">
-            <option value="" disabled selected>Selecione Nível</option>
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
+          <select v-model="questao.nivel_id" id="nivel_id" class="browser-default" @change="getCategorias">
+            <option value="" disabled selected>Selecione o nível</option>
+            <option v-for="nivel in nivels.data" :value="nivel.id">{{nivel.nivel}}</option>
           </select>
-          <label v-for="" class="active">Nível</label>
+          <label class="active">Nível</label>
         </div>
         <div class="input-field col s3">
-          <select class="browser-default">
-            <option value="" disabled selected>Selecione a Categoria</option>
-            <option value="1">Números e Operações</option>
-            <option value="2">Tratamento da Informação</option>
-            <option value="3">Grandezas e Medidas</option>
-            <option value="4">Espaços e Formas</option>
-            <option value="5">Tratamento de Informações</option>
+          <select v-model="questao.categoria_id" id="categoria_id" class="browser-default" @change="getHabilidades">
+            <option value="" disabled selected>Selecione o Tema/Tópicos</option>
+            <option v-for="categoria in categorias.data" :value="categoria.id">{{categoria.categoria}}</option>
           </select>
-          <label v-for="" class="active">Categoria</label>
+          <label class="active">Tema/Tópicos</label>
         </div>
         <div class="input-field col s3">
-          <select class="browser-default">
+          <select v-model="questao.habilidade_id" id="habilidade_id" class="browser-default" @change="getQuestao">
             <option value="" disabled selected>Selecione a Habilidades</option>
-            <option value="1">D16 - Identificar a localização de números inteiros na
-              reta numérica.
-            </option>
-            <option value="2">D17 - Identificar a localização de números racionais na
-              reta numérica.
-            </option>
-            <option value="3">D18 - Efetuar cálculos com números inteiros,
-              envolvendo as operações (adição, subtração,
-              multiplicação, divisão, potenciação).
-            </option>
-            <option value="4">D19 - Resolver problema com números naturais,
-              envolvendo diferentes significados das operações
-              (adição, subtracão, multiplicação, divisão,
-              potenciação).
-            </option>
-            <option valeu="5">D20 - Resolver problema com números inteiros
-              envolvendo as operações (adição, subtracão,
-              multiplicação, divisão, potenciação).
-            </option>
-            <option valeu="6">D21 - Reconhecer as diferentes representações de um
-              número racional.
-            </option>
-            <option valeu="7">D22 - Identificar fração como representação que pode
-              estar associada a diferentes significados.
-            </option>
-            <option value="8">D23 - Identificar frações equivalentes.</option>
-            <option value="9"> D24 - Reconhecer as representações decimais dos
-              números racionais como uma extensão do sistema de
-              numeração decimal, identificando a existência de
-              "ordens" como décimos, centésimos e milésimos.
-            </option>
-            <option value="10">D25 - Efetuar cálculos que envolvam operações com
-              números racionais (adição, subtracão, multiplicação,
-              divisão, potenciação).
-            </option>
+            <option v-for="habilidade in habilidades.data" :value="habilidade.id">{{habilidade.habilidade}}</option>
           </select>
-          <label v-for="" class="active">Habilidades</label>
-        </div>
-        <div class="input-field col s6">
-          <input type="submit" class="waves-effect waves-light btn-large  indigo accent-1 darken-4" value="Gerar Prova">
+          <label class="active">Habilidades</label>
         </div>
       </form>
+
+      <div class="input-field col s12">
+        <a @click.prevent="addQuestao" id="buttonAdd" class="btn-floating btn-large waves-effect waves-light"><i
+          class="ion-md-add"></i></a>
+      </div>
     </div>
-    <div class="card-action">
-      <a class="waves-effect waves-light btn indigo accent-1 darken-4" href="#/provas">Voltar</a>
+    <div class="card-content">
+      <div>
+        <ul id="listaQuestao" class="collapsible popout" data-collapsible="accordion">
+
+        </ul>
+      </div>
     </div>
+    <div class="card-content">
+      <div class="input-field col s12">
+        <input type="submit" class="waves-effect waves-light btn-large  indigo accent-1 darken-4" value="Gerar Prova">
+      </div>
+      <div class="card-action col s12">
+        <a class="waves-effect waves-light btn indigo accent-1 darken-4" href="#/provas">Voltar</a>
+      </div>
+    </div>
+
   </div>
 </div>

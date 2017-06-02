@@ -23,13 +23,14 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      '@': resolve('src'),
+      'jquery': "jquery/src/jquery"
     }
   },
   plugins:[
     new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery:'jquery'
+      'window.$': 'jquery',
+      'window.jQuery':'jquery'
     }),
   ],
   module: {
@@ -72,6 +73,17 @@ module.exports = {
       {
         test: /\.(html)$/,
         loader: 'html-loader'
+      },
+      { test: require.resolve("jquery"),
+        loader: "expose?$!expose?jQuery"
+      },
+      {
+        test: /[\/\\]node_modules[\/\\]some-module[\/\\]index\.js$/,
+        loader: "imports-loader?this=>window"
+      },
+      {
+        test: /[\/\\]node_modules[\/\\]some-module[\/\\]index\.js$/,
+        loader: "imports-loader?define=>false"
       }
     ]
   }

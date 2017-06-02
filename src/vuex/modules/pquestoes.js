@@ -22,6 +22,11 @@ export default {
         context.commit('updateQuestoesList', response.data)
       })
     },
+    getQuestaoP (context, data) {
+      Vue.http.get('api/pquestoes?where[serie_id]=' + data.serie_id + '&where[area_id]=' + data.area_id + '&where[nivel_id]=' + data.nivel_id + '&where[categoria_id]=' + data.categoria_id + '&where[habilidade_id]=' + data.habilidade_id).then(response => {
+        context.commit('updateNivelList', response.data)
+      })
+    },
     getQuestao (context, id) {
       Vue.http.get('api/pquestoes/' + id).then(response => {
         context.commit('updateQuestoesView', response.data)

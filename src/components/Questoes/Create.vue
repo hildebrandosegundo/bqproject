@@ -21,6 +21,14 @@
       getNivels () {
         this.$store.dispatch('getNivel', this.questao1)
       },
+      // busca categoria
+      getCategorias () {
+        this.$store.dispatch('getCategoria', this.questao1)
+      },
+      // busca habilidade
+      getHabilidades () {
+        this.$store.dispatch('getHabilidade', this.questao1)
+      },
       onFileChange (e, img) {
         const files = e.target.files || e.dataTransfer.files
 
@@ -85,6 +93,12 @@
       },
       nivels () {
         return this.$store.state.nivel.nivelList
+      },
+      categorias () {
+        return this.$store.state.categoria.categoriaList
+      },
+      habilidades () {
+        return this.$store.state.habilidade.habilidadeList
       }
     },
     created () {

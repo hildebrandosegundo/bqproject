@@ -20,6 +20,14 @@
       getNivels () {
         this.$store.dispatch('getNivel', this.questao1)
       },
+      // busca categoria
+      getCategorias () {
+        this.$store.dispatch('getCategoria', this.questao1)
+      },
+      // busca habilidade
+      getHabilidades () {
+        this.$store.dispatch('getHabilidade', this.questao1)
+      },
       onFileChange (e, img) {
         const files = e.target.files || e.dataTransfer.files
 
@@ -88,20 +96,21 @@
       nivels () {
         return this.$store.state.nivel.nivelList
       },
+      categorias () {
+        return this.$store.state.categoria.categoriaList
+      },
+      habilidades () {
+        return this.$store.state.habilidade.habilidadeList
+      },
       questao1 () {
         var questao = this.$store.state.questao.questoesView
-        // console.log('teste: ' + questao.imagem)
         this.image_enu = questao.imagem || ''
         this.image_alt1 = questao.imagemAl1 || ''
         this.image_alt2 = questao.imagemAl2 || ''
         this.image_alt3 = questao.imagemAl3 || ''
         this.image_alt4 = questao.imagemAl4 || ''
         this.image_alt5 = questao.imagemAl5 || ''
-        /* $('#img_alt1').attr('src', questao.imagemAl1)
-        $('#img_alt2').attr('src', questao.imagemAl2)
-        $('#img_alt3').attr('src', questao.imagemAl3)
-        $('#img_alt4').attr('src', questao.imagemAl4)
-        $('#img_alt5').attr('src', questao.imagemAl5) */
+
         return questao
       }
     },
